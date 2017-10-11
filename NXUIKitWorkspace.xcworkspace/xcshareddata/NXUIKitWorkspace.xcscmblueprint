@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9FBF51FD35D4FE8981C5016D55B9B92C82412A52",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9FBF51FD35D4FE8981C5016D55B9B92C82412A52" : 0,
+    "00D99A4F5ADDD9506A6F6241470EA54ED828C844" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A8598B22-47BB-4F1E-AD47-D066A6D4B011",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9FBF51FD35D4FE8981C5016D55B9B92C82412A52" : "NXUIKit\/",
+    "00D99A4F5ADDD9506A6F6241470EA54ED828C844" : "NXConstraintKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NXUIKitWorkspace",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NXUIKitWorkspace.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/sferra43\/nxconstraintkit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "00D99A4F5ADDD9506A6F6241470EA54ED828C844"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/sferra43\/nxuikit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9FBF51FD35D4FE8981C5016D55B9B92C82412A52"
+    }
+  ]
+}
