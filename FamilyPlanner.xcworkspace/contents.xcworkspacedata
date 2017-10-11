@@ -4,4 +4,7 @@
    <FileRef
       location = "group:FamilyPlanner/FamilyPlanner.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:NXUIKit/NXUIKit.xcodeproj">
+   </FileRef>
 </Workspace>
