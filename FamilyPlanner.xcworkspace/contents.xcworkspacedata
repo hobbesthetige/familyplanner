@@ -5,6 +5,9 @@
       location = "group:FamilyPlanner/FamilyPlanner.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:NXConstraintKit/NXConstraintKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:NXUIKit/NXUIKit.xcodeproj">
    </FileRef>
 </Workspace>

@@ -24,6 +24,8 @@
 		D012159B1F8E55ED001895CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D012159A1F8E55ED001895CA /* User.swift */; };
 		D012159D1F8E5F56001895CA /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D012159C1F8E5F56001895CA /* CloudKitHelper.swift */; };
 		D034020B1F8EC7A7006E6119 /* EventChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D034020A1F8EC7A7006E6119 /* EventChecklist.swift */; };
+		D03402171F8ECD6D006E6119 /* NXConstraintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03402161F8ECD6D006E6119 /* NXConstraintKit.framework */; };
+		D03402181F8ECD6D006E6119 /* NXConstraintKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D03402161F8ECD6D006E6119 /* NXConstraintKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +35,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = D01215851F8D97DE001895CA;
 			remoteInfo = AppData;
-		};
-		D03402101F8ECBC0006E6119 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D034020C1F8ECBC0006E6119 /* NXUIKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 023004E51B15DFFA00C0FBD2;
-			remoteInfo = NXUIKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,6 +46,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D012158E1F8D97DE001895CA /* AppData.framework in Embed Frameworks */,
+				D03402181F8ECD6D006E6119 /* NXConstraintKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +74,7 @@
 		D012159A1F8E55ED001895CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D012159C1F8E5F56001895CA /* CloudKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		D034020A1F8EC7A7006E6119 /* EventChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventChecklist.swift; sourceTree = "<group>"; };
-		D034020C1F8ECBC0006E6119 /* NXUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NXUIKit.xcodeproj; path = ../NXUIKit/NXUIKit.xcodeproj; sourceTree = "<group>"; };
+		D03402161F8ECD6D006E6119 /* NXConstraintKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NXConstraintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03402171F8ECD6D006E6119 /* NXConstraintKit.framework in Frameworks */,
 				D012158D1F8D97DE001895CA /* AppData.framework in Frameworks */,
 				D012157E1F8D8D19001895CA /* CloudKit.framework in Frameworks */,
 			);
@@ -104,6 +101,7 @@
 		D00C45851F8D5A83007E3B82 = {
 			isa = PBXGroup;
 			children = (
+				D03402161F8ECD6D006E6119 /* NXConstraintKit.framework */,
 				D00C45901F8D5A83007E3B82 /* FamilyPlanner */,
 				D01215871F8D97DE001895CA /* AppData */,
 				D00C458F1F8D5A83007E3B82 /* Products */,
@@ -139,7 +137,6 @@
 		D012157C1F8D8D19001895CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D034020C1F8ECBC0006E6119 /* NXUIKit.xcodeproj */,
 				D012157D1F8D8D19001895CA /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -158,14 +155,6 @@
 				D034020A1F8EC7A7006E6119 /* EventChecklist.swift */,
 			);
 			path = AppData;
-			sourceTree = "<group>";
-		};
-		D034020D1F8ECBC0006E6119 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D03402111F8ECBC0006E6119 /* NXUIKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,12 +247,6 @@
 			mainGroup = D00C45851F8D5A83007E3B82;
 			productRefGroup = D00C458F1F8D5A83007E3B82 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D034020D1F8ECBC0006E6119 /* Products */;
-					ProjectRef = D034020C1F8ECBC0006E6119 /* NXUIKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D00C458D1F8D5A83007E3B82 /* FamilyPlanner */,
@@ -271,16 +254,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D03402111F8ECBC0006E6119 /* NXUIKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NXUIKit.framework;
-			remoteRef = D03402101F8ECBC0006E6119 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D00C458C1F8D5A83007E3B82 /* Resources */ = {
