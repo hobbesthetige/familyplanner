@@ -8,7 +8,28 @@
 
 import CloudKit
 
-public typealias DateRange = (startDate : Date, endDate : Date)
+public struct DateRange
+{
+    public let startDate : Date
+    public let endDate : Date
+    
+    public var isSingleDate : Bool {
+        
+        return Calendar.current.compare(startDate, to: endDate, toGranularity: .second) == .orderedSame
+    }
+    
+    public init(startDate : Date, endDate : Date) {
+        
+        self.startDate = startDate
+        self.endDate = endDate
+    }
+    
+    public init(singleDate date : Date) {
+        
+        self.startDate = date
+        self.endDate = date
+    }
+}
 
 
 public class EventCloudKitModel : CloudKitModel
@@ -26,6 +47,8 @@ public class Event : EventCloudKitModel
 {
     public var title : String
     
+    public var color : UIColor
+    
     public var dateRange : DateRange?
     
     public var invitees = [EventInvitees]()
@@ -34,9 +57,13 @@ public class Event : EventCloudKitModel
     
     public var checklistItems = [EventChecklistItem]()
     
+    public var isComplete = false
+    
     public init(title : String) {
         
         self.title = title
+        
+        self.color = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
     }
 }
 

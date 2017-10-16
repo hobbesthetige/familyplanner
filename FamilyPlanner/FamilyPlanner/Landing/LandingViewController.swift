@@ -7,10 +7,20 @@
 //
 
 import UIKit
-import CloudKit
+import NXUIKit
 
-class ViewController: UIViewController {
+class LandingViewController: UIViewController {
 
+    var photoController : UIViewController {
+        
+        return childViewControllers[0]
+    }
+    
+    var tabController : CalendarTabController {
+        
+        return childViewControllers[1] as! CalendarTabController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
