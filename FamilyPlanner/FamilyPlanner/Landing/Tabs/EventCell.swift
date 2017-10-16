@@ -95,10 +95,17 @@ public class EventCell : UITableViewCell
                 hideThruLabel()
             }
             else {
-                
                 thruLabel.text = "thru " + (model?.endDay ?? "")
                 
                 showThruLabel()
+            }
+            
+            if model?.isComplete == true {
+                
+                markAsCompleted()
+            }
+            else {
+                markAsIncomplete()
             }
         }
     }
@@ -123,13 +130,28 @@ public class EventCell : UITableViewCell
     
     private func markAsCompleted() {
         
-        let attributes = [NSAttributedStringKey.font : UIFont.preferredFont(forTextStyle: .body)]
+        guard let text = titleLabel.text else { return }
         
-        NSAttributedString(string: <#T##String#>, attributes: <#T##[NSAttributedStringKey : Any]?#>)
+        titleLabel.attributedText = NSAttributedString(string: text, attributes: FontStyle.strikethroughBody)
+        
+        let views = [monthLabel,dateLabel,thruLabel]
+        
+        for view in views {
+            view?.textColor = .lightGray
+        }
     }
     
     private func markAsIncomplete() {
         
+        guard let text = titleLabel.text else { return }
+        
+        titleLabel.attributedText = NSAttributedString(string: text, attributes: FontStyle.body)
+        
+        let views = [monthLabel,dateLabel,thruLabel]
+        
+        for view in views {
+            view?.textColor = .black
+        }
     }
 }
 

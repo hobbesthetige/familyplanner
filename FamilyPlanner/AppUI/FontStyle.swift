@@ -10,17 +10,14 @@ import UIKit
 
 public struct FontStyle
 {
-    static let strikethruBody = [
+    public static let strikethroughBody = [
         NSAttributedStringKey.font : UIFont.preferredFont(forTextStyle: .body),
-        NSAttributedStringKey.strikethroughStyle : 2,
-        NSAttributedStringKey.strikethroughColor : UIColor.darkGray,
-        NSAttributedStringKey.foregroundColor : UIColor.darkGray
+        NSAttributedStringKey.strikethroughStyle : 1,
+        NSAttributedStringKey.strikethroughColor : UIColor.lightGray,
+        NSAttributedStringKey.foregroundColor : UIColor.lightGray
         ] as [NSAttributedStringKey : Any]
     
-    static let strikethruBody = [
+    public static let body = [
         NSAttributedStringKey.font : UIFont.preferredFont(forTextStyle: .body),
-        NSAttributedStringKey.strikethroughStyle : 2,
-        NSAttributedStringKey.strikethroughColor : UIColor.darkGray,
-        NSAttributedStringKey.foregroundColor : UIColor.darkGray
         ] as [NSAttributedStringKey : Any]
 }
