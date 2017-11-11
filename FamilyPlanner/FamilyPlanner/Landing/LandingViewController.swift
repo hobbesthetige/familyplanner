@@ -16,9 +16,9 @@ class LandingViewController: UIViewController {
         return childViewControllers[0]
     }
     
-    var tabController : CalendarTabController {
+    var tabController : LandingTabController {
         
-        return childViewControllers[1] as! CalendarTabController
+        return childViewControllers[1] as! LandingTabController
     }
     
     override func viewDidLoad() {

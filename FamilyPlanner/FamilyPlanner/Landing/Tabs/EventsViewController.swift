@@ -24,12 +24,14 @@ public class EventsViewController : UITableViewController
         setupTestEvent1()
         setupTestEvent2()
         setupTestEvent3()
+        setupTestEvent4()
     }
     
     private func setupTestEvent1() {
         let event = Event(title: "Glenn's 32nd Birthday")
         
         event.color = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        event.description = "Happy\nBirthday\nBro!\nHope you have\na great day!"
         
         var sComponents = DateComponents()
         
@@ -42,6 +44,40 @@ public class EventsViewController : UITableViewController
         sComponents.second = 0
         
         event.dateRange = DateRange(singleDate: sComponents.date!)
+        
+        let locationBuilder = LocationBuilder(title: "The Blue House", coordinate: (34.988189,-80.266907))
+        locationBuilder.street = "103 Upper White Store Road"
+        locationBuilder.city = "Peachland"
+        locationBuilder.state = "NC"
+        locationBuilder.zipcode = "28133"
+        locationBuilder.createLocation { (location) in
+            
+            if let location = location {
+                event.location = location
+            }
+        }
+        
+        event.inviteAllFamily()
+        
+        if let invitee = event.invitees.last {
+           
+            let response = EventInviteeResponse(type: .attending, comments: "Looking forward to it!")
+            invitee.respond(response: response)
+        }
+        
+        let item1 = EventChecklistItem(title: "Bring the turkey")
+        let item2 = EventChecklistItem(title: "Need three casseroles")
+        let item3 = EventChecklistItem(title: "Volunteer for bringing drinks")
+        
+        item3.markAsComplete(by: FamilyMember.dad, notes: "I got this. 💪🏻")
+        
+        event.checklistItems = [item1,item2,item3]
+        
+        let comment1 = EventComment(comments: "Wassupppppp!!! Looking forward to this.", author: FamilyMember.dansFamily.husband)
+        
+        let comment2 = EventComment(comments: "I'll be in my room hiding.", author: FamilyMember.dansFamily.wife)
+        
+        event.comments = [comment1,comment2]
         
         events.append(event)
     }
@@ -83,6 +119,13 @@ public class EventsViewController : UITableViewController
         
         events.append(event)
     }
+    private func setupTestEvent4() {
+        let event = Event(title: "Meachum Christmas @ Pam & Steve's Lake House")
+        
+        event.color = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        
+        events.append(event)
+    }
     
     
     public override func numberOfSections(in tableView: UITableView) -> Int {
@@ -112,6 +155,29 @@ public class EventsViewController : UITableViewController
             cell.model = NoDateEventCellViewModel(event: event)
             
             return cell
+        }
+    }
+    
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "event" {
+            
+            if let cell = sender as? EventCell, let model = cell.model {
+                
+                let event = model.event
+                
+                let controller = segue.destination as! EventViewController
+                
+                controller.event = event
+            }
+            else if let cell = sender as? NoDateEventCell, let model = cell.model {
+                
+                let event = model.event
+                
+                let controller = segue.destination as! EventViewController
+                
+                controller.event = event
+            }
         }
     }
 }

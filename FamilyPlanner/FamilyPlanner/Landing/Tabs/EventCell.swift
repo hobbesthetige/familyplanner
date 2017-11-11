@@ -9,6 +9,7 @@
 import UIKit
 import AppUI
 import AppData
+import SwiftDate
 
 public protocol EventViewModel
 {
@@ -48,7 +49,13 @@ public struct EventCellViewModel : EventViewModel
     
     let isSingleDate : Bool
     
+    let isInPast : Bool
+    
     let isComplete : Bool
+    
+    let isOccurringNow : Bool
+    
+    let relativeTime : String
     
     public init?(event : Event) {
         
@@ -57,8 +64,7 @@ public struct EventCellViewModel : EventViewModel
         self.event = event
         
         let calendar = Calendar.current
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM"
+        let formatter = DateFormatters.monthDateFormatter
         
         startDay = calendar.component(.day, from: dateRange.startDate).description
         endDay = calendar.component(.day, from: dateRange.endDate).description
@@ -68,6 +74,10 @@ public struct EventCellViewModel : EventViewModel
         color = event.color
         isSingleDate = dateRange.isSingleDate
         isComplete = event.isComplete
+        isInPast = event.isInPast
+        isOccurringNow = event.isOccurringNow
+        
+        relativeTime = event.relativeTime
     }
 }
 
@@ -77,6 +87,7 @@ public class EventCell : UITableViewCell
     @IBOutlet weak var dateLabel : UILabel!
     @IBOutlet var thruLabel : UILabel!
     @IBOutlet weak var titleLabel : UILabel!
+    @IBOutlet weak var relativeTimeLabel : UILabel!
     @IBOutlet weak var circleView : CircleView!
     @IBOutlet weak var dateStackView: UIStackView!
     
@@ -86,7 +97,7 @@ public class EventCell : UITableViewCell
             
             monthLabel.text = model?.startMonth
             dateLabel.text = model?.startDay
-            
+            relativeTimeLabel.text = model?.relativeTime
             titleLabel.text = model?.title
             circleView.backgroundColor = model?.color
             
@@ -104,7 +115,16 @@ public class EventCell : UITableViewCell
                 
                 markAsCompleted()
             }
+            else if model?.isInPast == true {
+                
+                markAsInPast()
+            }
+            else if model?.isOccurringNow == true {
+                
+                markAsOccurringNow()
+            }
             else {
+                
                 markAsIncomplete()
             }
         }
@@ -138,6 +158,32 @@ public class EventCell : UITableViewCell
         
         for view in views {
             view?.textColor = .lightGray
+        }
+    }
+    
+    private func markAsInPast() {
+        
+        guard let text = titleLabel.text else { return }
+        
+        titleLabel.attributedText = NSAttributedString(string: text, attributes: FontStyle.body)
+        
+        let views = [monthLabel,dateLabel,thruLabel]
+        
+        for view in views {
+            view?.textColor = .lightGray
+        }
+    }
+    
+    private func markAsOccurringNow() {
+        
+        guard let text = titleLabel.text else { return }
+        
+        titleLabel.attributedText = NSAttributedString(string: text, attributes: FontStyle.body)
+        
+        let views = [dateLabel]
+        
+        for view in views {
+            view?.textColor = .red
         }
     }
     

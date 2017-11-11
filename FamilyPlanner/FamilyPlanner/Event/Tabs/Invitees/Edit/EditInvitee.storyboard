@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fcr-4M-XSc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="KXk-ae-qHP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fcr-4M-XSc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4kR-1b-SdL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dhk-fU-cSj" kind="relationship" relationship="rootViewController" id="eEI-Re-Mhs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fiT-av-FRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="1599"/>
+        </scene>
+        <!--Invitation to Dan's family-->
+        <scene sceneID="A3W-xi-eSP">
+            <objects>
+                <viewController id="Dhk-fU-cSj" customClass="InviteeDetailViewController" customModule="FamilyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jXL-mR-vTi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0g-qa-8cK" customClass="SegmentedButton" customModule="AppUI">
+                                <rect key="frame" x="16" y="80" width="343" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3OV-qK-nSD"/>
+                                    <constraint firstAttribute="width" constant="343" id="iwM-x0-LZl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectionBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a response message" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjl-K0-rdi" customClass="LineTextField" customModule="AppUI">
+                                <rect key="frame" x="16" y="140" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xMr-rW-yW9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Dhk-fU-cSj" id="FsN-RO-iif"/>
+                                </connections>
+                            </textField>
+                            <stackView verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="g21-9e-A3j">
+                                <rect key="frame" x="16" y="202" width="343" height="200"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="26n-Ch-tex" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h0g-qa-8cK" secondAttribute="trailing" constant="16" id="2eg-YX-bFi"/>
+                            <constraint firstItem="hjl-K0-rdi" firstAttribute="leading" secondItem="h0g-qa-8cK" secondAttribute="leading" id="3OA-SG-4yU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g21-9e-A3j" secondAttribute="trailing" id="Ac1-cS-fku"/>
+                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="g21-9e-A3j" secondAttribute="bottom" id="CE6-Xi-WhD"/>
+                            <constraint firstItem="h0g-qa-8cK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="26n-Ch-tex" secondAttribute="leading" constant="16" id="DQ8-9Q-Gl3"/>
+                            <constraint firstItem="h0g-qa-8cK" firstAttribute="centerX" secondItem="jXL-mR-vTi" secondAttribute="centerX" id="Fgo-sb-amN"/>
+                            <constraint firstItem="g21-9e-A3j" firstAttribute="top" secondItem="hjl-K0-rdi" secondAttribute="bottom" constant="8" id="FoW-xr-Rah"/>
+                            <constraint firstItem="hjl-K0-rdi" firstAttribute="trailing" secondItem="h0g-qa-8cK" secondAttribute="trailing" id="IRJ-Rn-BAl"/>
+                            <constraint firstItem="g21-9e-A3j" firstAttribute="leading" secondItem="jXL-mR-vTi" secondAttribute="leadingMargin" id="Iyr-1B-6bw"/>
+                            <constraint firstItem="h0g-qa-8cK" firstAttribute="top" secondItem="26n-Ch-tex" secondAttribute="top" constant="16" id="Zxb-ZC-io6"/>
+                            <constraint firstItem="hjl-K0-rdi" firstAttribute="top" secondItem="h0g-qa-8cK" secondAttribute="bottom" constant="16" id="fge-OY-Ig9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="26n-Ch-tex"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Invitation to Dan's family" id="UfL-JO-Pak">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C94-9n-aPU">
+                            <connections>
+                                <action selector="cancelButtonActionWithSender:" destination="Dhk-fU-cSj" id="nfq-IE-2Py"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="O1E-Cn-N5U">
+                            <connections>
+                                <action selector="doneButtonActionWithSender:" destination="Dhk-fU-cSj" id="LBZ-Il-hf6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="stackView" destination="g21-9e-A3j" id="jLw-uw-1yV"/>
+                        <outlet property="statusButton" destination="h0g-qa-8cK" id="ovw-iH-IhX"/>
+                        <outlet property="textField" destination="hjl-K0-rdi" id="EcY-cd-kn1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnf-a3-R25" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="1599"/>
+        </scene>
+    </scenes>
+</document>

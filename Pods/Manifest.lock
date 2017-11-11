@@ -1,0 +1,15 @@
+PODS:
+  - FLAnimatedImage (1.0.12)
+  - SwiftDate (4.4.1)
+
+DEPENDENCIES:
+  - FLAnimatedImage (~> 1.0)
+  - SwiftDate (~> 4.4.0)
+
+SPEC CHECKSUMS:
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  SwiftDate: a70a534d4feed03b2a2b575e36bef82dc2286a8d
+
+PODFILE CHECKSUM: 403952f51edebcd6531b0dbb5dac53da305d3369
+
+COCOAPODS: 1.3.1
