@@ -298,7 +298,7 @@ Multiline</string>
         <!--👨‍👩‍👧‍👧-->
         <scene sceneID="HOc-4p-Lsc">
             <objects>
-                <tableViewController storyboardIdentifier="attendees" title="👨‍👩‍👧‍👧" id="a9e-H9-aln" customClass="EventInviteesViewController" customModule="FamilyPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="attendees" title="👨‍👩‍👧‍👧" id="a9e-H9-aln" customClass="EventinvitationsViewController" customModule="FamilyPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aXc-0A-J47">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,7 +309,10 @@ Multiline</string>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9L-1f-ogh">
                                     <rect key="frame" x="0.0" y="68" width="375" height="76"/>
-                                    <state key="normal" title="Invite People"/>
+                                    <state key="normal" title="Manage Invitations"/>
+                                    <connections>
+                                        <segue destination="kLW-Qe-ypO" kind="presentation" identifier="manage" modalPresentationStyle="formSheet" id="qPE-Fi-Puv"/>
+                                    </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="zgK-tD-TTS">
                                     <rect key="frame" x="37.5" y="8" width="300" height="60"/>
@@ -573,6 +576,14 @@ Multiline</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Irx-xB-RO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1540" y="603"/>
+        </scene>
+        <!--ManageInvitees-->
+        <scene sceneID="5bi-fL-lg6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ManageInvitees" id="kLW-Qe-ypO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Idu-HB-zeU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1806" y="602"/>
         </scene>
         <!--📋-->
         <scene sceneID="2A3-lp-GtC">

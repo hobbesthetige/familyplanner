@@ -18,7 +18,7 @@ public class EventInviteeCell : UITableViewCell
     @IBOutlet weak var commentsLabel : UILabel!
     @IBOutlet weak var circleView : CircleView!
     
-    public weak var invitee : EventInvitees? {
+    public weak var invitee : EventInvitation? {
         
         didSet {
             
@@ -37,7 +37,7 @@ public class MyEventInviteeResponseCell : UITableViewCell
     @IBOutlet weak var circleView : CircleView!
     @IBOutlet weak var commentsTextField : UITextField!
     
-    public weak var invitee : EventInvitees? {
+    public weak var invitee : EventInvitation? {
         
         didSet {
             

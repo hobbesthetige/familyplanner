@@ -163,7 +163,9 @@ public protocol FamilyRepresentation
     var size : Int { get }
     
     var memberSize : Int { get }
+    
 }
+
 extension FamilyMember : FamilyRepresentation
 {
     public var nameRepresentation: String {

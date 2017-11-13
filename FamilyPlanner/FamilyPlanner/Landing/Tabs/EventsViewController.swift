@@ -59,9 +59,9 @@ public class EventsViewController : UITableViewController
         
         event.inviteAllFamily()
         
-        if let invitee = event.invitees.last {
+        if let invitee = event.invitations.last {
            
-            let response = EventInviteeResponse(type: .attending, comments: "Looking forward to it!")
+            let response = EventInvitationResponse(type: .attending, comments: "Looking forward to it!")
             invitee.respond(response: response)
         }
         

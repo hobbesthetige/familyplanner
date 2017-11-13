@@ -14,7 +14,7 @@ public class EventTabViewController : NXTabbedPageViewController
     var event : Event?
     
     private(set) var locationController : EventLocationViewController!
-    private(set) var attendeesController : EventInviteesViewController!
+    private(set) var attendeesController : EventinvitationsViewController!
     private(set) var checklistsController : EventChecklistItemsViewController!
     private(set) var commentsController : EventCommentsViewController!
     
@@ -50,9 +50,9 @@ public class EventTabViewController : NXTabbedPageViewController
     
     private func instantiateAttendeesController() {
         
-        attendeesController = storyboard!.instantiateViewController(withIdentifier: "attendees") as! EventInviteesViewController
+        attendeesController = storyboard!.instantiateViewController(withIdentifier: "attendees") as! EventinvitationsViewController
         
-        attendeesController.invitees = event?.invitees ?? []
+        attendeesController.invitations = event?.invitations ?? []
     }
     
     private func instantiateChecklistsController() {

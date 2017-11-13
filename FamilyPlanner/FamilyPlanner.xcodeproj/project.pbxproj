@@ -42,6 +42,11 @@
 		D0550A8A1FA50F2600B59626 /* EditInvitee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0550A891FA50F2600B59626 /* EditInvitee.storyboard */; };
 		D0550A8C1FA5100F00B59626 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0550A8B1FA5100F00B59626 /* LineTextField.swift */; };
 		D08810261FA4C4F0006B6DF5 /* EventChecklistItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08810251FA4C4F0006B6DF5 /* EventChecklistItemsViewController.swift */; };
+		D093B7FF1FB76FAE008DAC53 /* ManageInvitees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D093B7FE1FB76FAE008DAC53 /* ManageInvitees.storyboard */; };
+		D093B8011FB77185008DAC53 /* ManageInvitationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093B8001FB77185008DAC53 /* ManageInvitationsViewController.swift */; };
+		D093B8031FB9D70E008DAC53 /* ManageInviteeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093B8021FB9D70E008DAC53 /* ManageInviteeCell.swift */; };
+		D093B8051FB9EA9A008DAC53 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093B8041FB9EA9A008DAC53 /* SectionHeaderView.swift */; };
+		D093B8071FB9EAC9008DAC53 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D093B8061FB9EAC9008DAC53 /* SectionHeaderView.xib */; };
 		D0A136781F94F3D600AE9A51 /* NXUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A136771F94F3D600AE9A51 /* NXUIKit.framework */; };
 		D0A136791F94F3D600AE9A51 /* NXUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0A136771F94F3D600AE9A51 /* NXUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0A1367B1F94F43700AE9A51 /* LandingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1367A1F94F43700AE9A51 /* LandingTabController.swift */; };
@@ -164,6 +169,11 @@
 		D0550A891FA50F2600B59626 /* EditInvitee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditInvitee.storyboard; sourceTree = "<group>"; };
 		D0550A8B1FA5100F00B59626 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		D08810251FA4C4F0006B6DF5 /* EventChecklistItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventChecklistItemsViewController.swift; sourceTree = "<group>"; };
+		D093B7FE1FB76FAE008DAC53 /* ManageInvitees.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageInvitees.storyboard; sourceTree = "<group>"; };
+		D093B8001FB77185008DAC53 /* ManageInvitationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageInvitationsViewController.swift; sourceTree = "<group>"; };
+		D093B8021FB9D70E008DAC53 /* ManageInviteeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageInviteeCell.swift; sourceTree = "<group>"; };
+		D093B8041FB9EA9A008DAC53 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		D093B8061FB9EAC9008DAC53 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		D0A136771F94F3D600AE9A51 /* NXUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NXUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A1367A1F94F43700AE9A51 /* LandingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingTabController.swift; sourceTree = "<group>"; };
 		D0A136811F94F5F200AE9A51 /* AppUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +281,7 @@
 		D00340771F9E3A6F00DF11FC /* Invitees */ = {
 			isa = PBXGroup;
 			children = (
+				D093B7FD1FB76F74008DAC53 /* Manage */,
 				D0550A861FA50EFE00B59626 /* Edit */,
 				D00340741F9E3A2600DF11FC /* EventInviteesViewController.swift */,
 				D00340781F9E3A7E00DF11FC /* EventInviteeCell.swift */,
@@ -406,6 +417,16 @@
 			path = "Checklist Items";
 			sourceTree = "<group>";
 		};
+		D093B7FD1FB76F74008DAC53 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				D093B7FE1FB76FAE008DAC53 /* ManageInvitees.storyboard */,
+				D093B8001FB77185008DAC53 /* ManageInvitationsViewController.swift */,
+				D093B8021FB9D70E008DAC53 /* ManageInviteeCell.swift */,
+			);
+			path = Manage;
+			sourceTree = "<group>";
+		};
 		D0A136821F94F5F200AE9A51 /* AppUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +438,8 @@
 				D0F015141F96B2CF005065A1 /* DateFormatters.swift */,
 				D0550A831FA50EB100B59626 /* SegmentedButton.swift */,
 				D0550A8B1FA5100F00B59626 /* LineTextField.swift */,
+				D093B8041FB9EA9A008DAC53 /* SectionHeaderView.swift */,
+				D093B8061FB9EAC9008DAC53 /* SectionHeaderView.xib */,
 			);
 			path = AppUI;
 			sourceTree = "<group>";
@@ -662,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00C459C1F8D5A83007E3B82 /* LaunchScreen.storyboard in Resources */,
+				D093B7FF1FB76FAE008DAC53 /* ManageInvitees.storyboard in Resources */,
 				D0550A8A1FA50F2600B59626 /* EditInvitee.storyboard in Resources */,
 				D0CDE6B31F96AC14008A34CE /* Event.storyboard in Resources */,
 				D00C45991F8D5A83007E3B82 /* Assets.xcassets in Resources */,
@@ -680,6 +704,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D093B8071FB9EAC9008DAC53 /* SectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,10 +917,12 @@
 				D0F015111F96B045005065A1 /* EventViewController+Setup.swift in Sources */,
 				D00C45921F8D5A83007E3B82 /* AppDelegate.swift in Sources */,
 				D00340751F9E3A2600DF11FC /* EventInviteesViewController.swift in Sources */,
+				D093B8011FB77185008DAC53 /* ManageInvitationsViewController.swift in Sources */,
 				D0F0150F1F96AF66005065A1 /* EventViewController.swift in Sources */,
 				D0C3F8DD1F98D9F300A091B2 /* EventTabViewController.swift in Sources */,
 				D0550A881FA50F0B00B59626 /* InviteeDetailViewController.swift in Sources */,
 				D00340791F9E3A7E00DF11FC /* EventInviteeCell.swift in Sources */,
+				D093B8031FB9D70E008DAC53 /* ManageInviteeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +951,7 @@
 				D0550A8C1FA5100F00B59626 /* LineTextField.swift in Sources */,
 				D0550A841FA50EB100B59626 /* SegmentedButton.swift in Sources */,
 				D0A136901F94FD9500AE9A51 /* CircleView.swift in Sources */,
+				D093B8051FB9EA9A008DAC53 /* SectionHeaderView.swift in Sources */,
 				D0A1368E1F94F60100AE9A51 /* UIManager.swift in Sources */,
 				D0A1369C1F95403600AE9A51 /* FontStyle.swift in Sources */,
 			);

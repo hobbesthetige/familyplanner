@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SectionHeaderView" customModule="AppUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6I-sO-Rks">
+                    <rect key="frame" x="16" y="12" width="42" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="YWZ-Sf-PBH"/>
+                        <constraint firstAttribute="height" priority="750" constant="26" id="xpQ-37-bjW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiW-R2-1oi">
+                    <rect key="frame" x="0.0" y="42" width="375" height="2"/>
+                    <color key="backgroundColor" red="0.18823529410000001" green="0.51372549020000002" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="VJU-db-diV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OiW-R2-1oi" firstAttribute="top" secondItem="q6I-sO-Rks" secondAttribute="bottom" constant="4" id="0Df-B0-toL"/>
+                <constraint firstItem="q6I-sO-Rks" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="UnC-BM-6WV"/>
+                <constraint firstItem="q6I-sO-Rks" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="aca-eQ-kDg"/>
+                <constraint firstItem="OiW-R2-1oi" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="gd3-0G-gZO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q6I-sO-Rks" secondAttribute="trailing" constant="8" id="ix8-kx-Ftz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OiW-R2-1oi" secondAttribute="trailing" id="jqu-gw-BYp"/>
+                <constraint firstItem="OiW-R2-1oi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wKt-co-Zum"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="titleLabel" destination="q6I-sO-Rks" id="Fgx-bj-afb"/>
+                <outlet property="underlineView" destination="OiW-R2-1oi" id="EMq-EM-D7q"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="366"/>
+        </view>
+    </objects>
+</document>

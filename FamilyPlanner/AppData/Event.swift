@@ -55,7 +55,7 @@ public class Event : EventCloudKitModel
     
     public var dateRange : DateRange?
     
-    public var invitees = [EventInvitees]()
+    public var invitations = [EventInvitation]()
     
     public var comments = [EventComment]()
     
@@ -74,16 +74,16 @@ public class Event : EventCloudKitModel
     
     public func inviteAllFamily() {
         
-        invitees += EventInvitees.createInvitationsForAllFamilyRepresentations()
+        invitations += EventInvitation.createInvitationsForAllFamilyRepresentations()
     }
     
     public func inviteAllFamily(ofGroup group : FamilyMemberGroup) {
         
-        invitees += EventInvitees.createInvitationsForAllFamilyRepresentations(ofGroup: group)
+        invitations += EventInvitation.createInvitationsForAllFamilyRepresentations(ofGroup: group)
     }
 }
 
-public enum EventInviteeResponseType : String
+public enum EventInvitationResponseType : String
 {
     case attending = "Attending", maybe = "Maybe Attending", notAttending = "Not Attending", notResponded = "No Response Yet"
     
@@ -101,24 +101,24 @@ public enum EventInviteeResponseType : String
         }
     }
 }
-public class EventInviteeResponse
+public class EventInvitationResponse
 {
-    public var type = EventInviteeResponseType.notResponded
+    public var type = EventInvitationResponseType.notResponded
     
     public var comments : String?
     
     public init() { }
     
-    public init(type : EventInviteeResponseType, comments : String?) {
+    public init(type : EventInvitationResponseType, comments : String?) {
         
         self.type = type
         self.comments = comments
     }
 }
 
-public class EventInvitees : EventCloudKitModel
+public class EventInvitation : EventCloudKitModel
 {
-    public let response = EventInviteeResponse()
+    public let response = EventInvitationResponse()
     
     public var dateRange : DateRange?
     
@@ -141,35 +141,50 @@ public class EventInvitees : EventCloudKitModel
         self.familyRepresentation = familyRepresentation
     }
     
-    fileprivate static func createInvitationsForAllFamilyRepresentations() -> [EventInvitees] {
+    fileprivate static func createInvitationsForAllFamilyRepresentations() -> [EventInvitation] {
         
-        var invitees = [EventInvitees]()
+        var invitations = [EventInvitation]()
         
         for representation in FamilyMember.allFamilyRepresentation {
             
-            invitees.append(EventInvitees(familyRepresentation: representation))
+            invitations.append(EventInvitation(familyRepresentation: representation))
         }
         
-        return invitees
+        return invitations
     }
     
-    fileprivate static func createInvitationsForAllFamilyRepresentations(ofGroup group : FamilyMemberGroup) -> [EventInvitees] {
+    fileprivate static func createInvitationsForAllFamilyRepresentations(ofGroup group : FamilyMemberGroup) -> [EventInvitation] {
         
-        var invitees = [EventInvitees]()
+        var invitations = [EventInvitation]()
         
         for representation in FamilyMember.allFamilyRepresentationOfGroup(group: group) {
             
-            invitees.append(EventInvitees(familyRepresentation: representation))
+            invitations.append(EventInvitation(familyRepresentation: representation))
         }
         
-        return invitees
+        return invitations
     }
     
-    public func respond(response : EventInviteeResponse) {
+    public func respond(response : EventInvitationResponse) {
         
         self.response.type = response.type
         self.response.comments = response.comments
     }
+}
+
+extension EventInvitation : Hashable
+{
+    public var hashValue: Int {
+        
+        return familyRepresentation.nameRepresentation.hashValue
+    }
+    
+    public static func ==(lhs: EventInvitation, rhs: EventInvitation) -> Bool {
+        
+        return lhs.hashValue == rhs.hashValue
+    }
+    
+    
 }
 
 public class EventComment : EventCloudKitModel

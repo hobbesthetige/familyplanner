@@ -11,7 +11,7 @@ import AppData
 
 public class InviteeDetailViewController : UIViewController
 {
-    var invitee : EventInvitees! {
+    var invitee : EventInvitation! {
         
         didSet {
             
@@ -21,7 +21,7 @@ public class InviteeDetailViewController : UIViewController
     
     var completionHandler = { }
     
-    private var adjustedStatusType = EventInviteeResponseType.notResponded
+    private var adjustedStatusType = EventInvitationResponseType.notResponded
     
     private var attendingAction : SegmentedButtonOption!
     private var notattendingAction : SegmentedButtonOption!
@@ -42,7 +42,7 @@ public class InviteeDetailViewController : UIViewController
     
     @IBAction func doneButtonAction(sender : UIBarButtonItem) {
         
-        invitee.respond(response: EventInviteeResponse(type: adjustedStatusType, comments: textField.text))
+        invitee.respond(response: EventInvitationResponse(type: adjustedStatusType, comments: textField.text))
         
         completionHandler()
         

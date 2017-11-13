@@ -1,5 +1,5 @@
 //
-//  EventInviteesViewController.swift
+//  EventinvitationsViewController.swift
 //  FamilyPlanner
 //
 //  Created by Daniel Meachum on 10/23/17.
@@ -9,9 +9,9 @@
 import Foundation
 import AppData
 
-public class EventInviteesViewController : UITableViewController
+public class EventinvitationsViewController : UITableViewController
 {
-    public var invitees = [EventInvitees]()
+    public var invitations = [EventInvitation]()
     
     @IBOutlet private weak var attendingLabel : UILabel!
     @IBOutlet private weak var invitedLabel : UILabel!
@@ -28,17 +28,17 @@ public class EventInviteesViewController : UITableViewController
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return max(1, invitees.count)
+        return max(1, invitations.count)
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if invitees.isEmpty {
+        if invitations.isEmpty {
             
             return tableView.dequeueReusableCell(withIdentifier: "no_results", for: indexPath)
         }
         
-        let invitee = invitees[indexPath.row]
+        let invitee = invitations[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EventInviteeCell
         
@@ -48,16 +48,16 @@ public class EventInviteesViewController : UITableViewController
     }
 }
 
-extension EventInviteesViewController
+extension EventinvitationsViewController
 {
     private func setupHeader() {
         
-        let invitedCount = invitees.count
-        let attendingInvitees = invitees.filter({ $0.response.type == .attending })
+        let invitedCount = invitations.count
+        let attendinginvitations = invitations.filter({ $0.response.type == .attending })
         var attendingCount = 0
-        attendingInvitees.forEach({ attendingCount += $0.familyRepresentation.size })
-        let waitingCount = invitees.filter({ $0.response.type == .notResponded || $0.response.type == .maybe }).count
-        let declinedCount = invitees.filter({ $0.response.type == .notAttending }).count
+        attendinginvitations.forEach({ attendingCount += $0.familyRepresentation.size })
+        let waitingCount = invitations.filter({ $0.response.type == .notResponded || $0.response.type == .maybe }).count
+        let declinedCount = invitations.filter({ $0.response.type == .notAttending }).count
         
         attendingLabel.text = String(attendingCount)
         invitedLabel.text = String(invitedCount)
@@ -66,7 +66,7 @@ extension EventInviteesViewController
     }
 }
 
-extension EventInviteesViewController
+extension EventinvitationsViewController
 {
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -85,6 +85,21 @@ extension EventInviteesViewController
                 self?.setupHeader()
                 
                 self?.tableView.reloadData()
+            }
+        }
+        else if segue.identifier == "manage" {
+            
+            let nav = segue.destination as! UINavigationController
+            
+            let controller = nav.topViewController as! ManageInvitationsViewController
+            
+            controller.invitations = invitations
+            
+            controller.completionHandler = { [unowned self] updatedInvitations in
+                
+                self.invitations = updatedInvitations
+                
+                self.tableView.reloadData()
             }
         }
     }
