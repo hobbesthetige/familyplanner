@@ -98,4 +98,14 @@ public class EventLocationViewController : UIViewController
     private func hideNoLocationPanel() {
         
     }
+    
+    
+    @IBAction func getDirectionsButtonAction(_ sender: UIButton) {
+        
+        guard let location = location else { return }
+        
+        let mapItem = MKMapItem(placemark: location.mapPlacemark)
+        
+        mapItem.openInMaps(launchOptions: nil)
+    }
 }

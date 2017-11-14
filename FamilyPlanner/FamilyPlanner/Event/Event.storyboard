@@ -225,6 +225,9 @@ Multiline</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wq-BD-OLm">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
                                         <state key="normal" title="Get Directions"/>
+                                        <connections>
+                                            <action selector="getDirectionsButtonAction:" destination="KO7-xm-ZIb" eventType="touchUpInside" id="RyQ-bK-CwY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49j-1q-uqR">
                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="44"/>
