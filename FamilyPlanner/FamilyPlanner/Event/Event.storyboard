@@ -204,7 +204,7 @@ Multiline</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lly-Hb-AiN">
-                                <rect key="frame" x="16" y="532" width="343" height="1"/>
+                                <rect key="frame" x="16" y="496" width="343" height="1"/>
                                 <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="mz1-jK-dfK"/>
@@ -214,32 +214,16 @@ Multiline</string>
                                 <rect key="frame" x="0.0" y="98.5" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbY-ki-6fL">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <state key="normal" title="Add to Calendar"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRx-nY-LS5">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
-                                        <state key="normal" title="Edit Dates"/>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="eNE-hr-FRc"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YOO-95-8Wt">
-                                <rect key="frame" x="0.0" y="488" width="375" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTz-Ok-HJj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                        <state key="normal" title="Edit Details"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Eox-MB-IUT"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organized by &lt;name&gt; on &lt;date&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7G-fS-Tc7">
-                                <rect key="frame" x="16" y="549" width="343" height="16"/>
+                                <rect key="frame" x="16" y="513" width="343" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -265,14 +249,18 @@ Multiline</string>
                                 <rect key="frame" x="0.0" y="615" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIm-jc-IW3">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="44"/>
                                         <state key="normal" title="Delete Event">
                                             <color key="titleColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nj-7g-U5G">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
+                                        <rect key="frame" x="125" y="0.0" width="125" height="44"/>
                                         <state key="normal" title="Hide Event"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTz-Ok-HJj">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="44"/>
+                                        <state key="normal" title="Edit Details"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -288,28 +276,25 @@ Multiline</string>
                             <constraint firstItem="kx4-0D-ZID" firstAttribute="top" secondItem="Yzq-Eg-4fO" secondAttribute="bottom" constant="8" id="6o4-KF-fXE"/>
                             <constraint firstItem="TTu-Ia-LRa" firstAttribute="trailing" secondItem="kx4-0D-ZID" secondAttribute="trailing" id="7FQ-IC-cHC"/>
                             <constraint firstItem="lly-Hb-AiN" firstAttribute="trailing" secondItem="zMZ-4w-uM5" secondAttribute="trailing" id="9gD-fF-hRy"/>
+                            <constraint firstItem="DAF-sx-gD6" firstAttribute="trailing" secondItem="kx4-0D-ZID" secondAttribute="trailing" id="AAv-wK-mPQ"/>
                             <constraint firstItem="lly-Hb-AiN" firstAttribute="leading" secondItem="zMZ-4w-uM5" secondAttribute="leading" id="BI9-DN-N3f"/>
                             <constraint firstItem="bqh-Zu-c1L" firstAttribute="leading" secondItem="TTu-Ia-LRa" secondAttribute="leading" constant="16" id="CHp-RU-kaq"/>
                             <constraint firstItem="K7G-fS-Tc7" firstAttribute="top" secondItem="lly-Hb-AiN" secondAttribute="bottom" constant="16" id="Ee2-U6-Nvi"/>
                             <constraint firstItem="Yzq-Eg-4fO" firstAttribute="leading" secondItem="bqh-Zu-c1L" secondAttribute="leading" id="MPK-cH-Y1Z"/>
                             <constraint firstItem="gIe-DW-8Hr" firstAttribute="leading" secondItem="TTu-Ia-LRa" secondAttribute="leading" constant="16" id="T95-iE-hx5"/>
-                            <constraint firstItem="DAF-sx-gD6" firstAttribute="trailing" secondItem="YOO-95-8Wt" secondAttribute="trailing" id="TLh-aS-Hty"/>
-                            <constraint firstItem="DAF-sx-gD6" firstAttribute="leading" secondItem="YOO-95-8Wt" secondAttribute="leading" id="TcO-S3-EyJ"/>
                             <constraint firstItem="fdN-rb-lto" firstAttribute="top" secondItem="gIe-DW-8Hr" secondAttribute="bottom" constant="16" id="VAV-tq-MTV"/>
                             <constraint firstItem="zMZ-4w-uM5" firstAttribute="top" secondItem="kx4-0D-ZID" secondAttribute="bottom" id="XOI-X1-N1p"/>
-                            <constraint firstItem="YOO-95-8Wt" firstAttribute="trailing" secondItem="kx4-0D-ZID" secondAttribute="trailing" id="Xge-ED-kYF"/>
                             <constraint firstItem="bqh-Zu-c1L" firstAttribute="top" secondItem="TTu-Ia-LRa" secondAttribute="top" constant="16" id="Yy3-6b-r76"/>
                             <constraint firstItem="kx4-0D-ZID" firstAttribute="leading" secondItem="TTu-Ia-LRa" secondAttribute="leading" id="aQU-pC-X2h"/>
                             <constraint firstItem="gIe-DW-8Hr" firstAttribute="top" secondItem="zMZ-4w-uM5" secondAttribute="bottom" constant="16" id="d72-aK-ycG"/>
                             <constraint firstItem="fdN-rb-lto" firstAttribute="leading" secondItem="TTu-Ia-LRa" secondAttribute="leading" constant="16" id="dDA-I8-dFT"/>
-                            <constraint firstItem="YOO-95-8Wt" firstAttribute="top" secondItem="fdN-rb-lto" secondAttribute="bottom" constant="8" id="ehe-wg-Yq0"/>
                             <constraint firstItem="TTu-Ia-LRa" firstAttribute="trailing" secondItem="K7G-fS-Tc7" secondAttribute="trailing" constant="16" id="jAO-mC-1Gj"/>
                             <constraint firstItem="TTu-Ia-LRa" firstAttribute="trailing" secondItem="gIe-DW-8Hr" secondAttribute="trailing" constant="16" id="juD-Np-jZG"/>
-                            <constraint firstItem="YOO-95-8Wt" firstAttribute="leading" secondItem="kx4-0D-ZID" secondAttribute="leading" id="oco-AK-ygO"/>
+                            <constraint firstItem="lly-Hb-AiN" firstAttribute="top" secondItem="fdN-rb-lto" secondAttribute="bottom" constant="16" id="qCj-Wl-NLc"/>
                             <constraint firstItem="Yzq-Eg-4fO" firstAttribute="top" secondItem="bqh-Zu-c1L" secondAttribute="bottom" constant="16" id="rHQ-dh-Hoc"/>
-                            <constraint firstItem="lly-Hb-AiN" firstAttribute="top" secondItem="YOO-95-8Wt" secondAttribute="bottom" id="tx8-w8-MuV"/>
                             <constraint firstItem="TTu-Ia-LRa" firstAttribute="trailing" secondItem="zMZ-4w-uM5" secondAttribute="trailing" constant="16" id="wYe-wE-TNl"/>
                             <constraint firstItem="TTu-Ia-LRa" firstAttribute="bottom" secondItem="DAF-sx-gD6" secondAttribute="bottom" constant="8" id="yLB-nl-6sq"/>
+                            <constraint firstItem="DAF-sx-gD6" firstAttribute="leading" secondItem="kx4-0D-ZID" secondAttribute="leading" id="zG1-p9-M94"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TTu-Ia-LRa"/>
                     </view>
