@@ -47,6 +47,7 @@
 		D093B8031FB9D70E008DAC53 /* ManageInviteeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093B8021FB9D70E008DAC53 /* ManageInviteeCell.swift */; };
 		D093B8051FB9EA9A008DAC53 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093B8041FB9EA9A008DAC53 /* SectionHeaderView.swift */; };
 		D093B8071FB9EAC9008DAC53 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D093B8061FB9EAC9008DAC53 /* SectionHeaderView.xib */; };
+		D093B80A1FBBC181008DAC53 /* CalendarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D093B8091FBBC181008DAC53 /* CalendarDetailsViewController.swift */; };
 		D0A136781F94F3D600AE9A51 /* NXUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A136771F94F3D600AE9A51 /* NXUIKit.framework */; };
 		D0A136791F94F3D600AE9A51 /* NXUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0A136771F94F3D600AE9A51 /* NXUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0A1367B1F94F43700AE9A51 /* LandingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1367A1F94F43700AE9A51 /* LandingTabController.swift */; };
@@ -174,6 +175,7 @@
 		D093B8021FB9D70E008DAC53 /* ManageInviteeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageInviteeCell.swift; sourceTree = "<group>"; };
 		D093B8041FB9EA9A008DAC53 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		D093B8061FB9EAC9008DAC53 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		D093B8091FBBC181008DAC53 /* CalendarDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailsViewController.swift; sourceTree = "<group>"; };
 		D0A136771F94F3D600AE9A51 /* NXUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NXUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A1367A1F94F43700AE9A51 /* LandingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingTabController.swift; sourceTree = "<group>"; };
 		D0A136811F94F5F200AE9A51 /* AppUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +264,7 @@
 		D003406D1F9A6A1D00DF11FC /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				D093B8081FBBC15C008DAC53 /* Calendar Details */,
 				D0550A7E1FA4D2AC00B59626 /* Comments */,
 				D08810241FA4C4D8006B6DF5 /* Checklist Items */,
 				D00340761F9E3A6800DF11FC /* Location */,
@@ -425,6 +428,14 @@
 				D093B8021FB9D70E008DAC53 /* ManageInviteeCell.swift */,
 			);
 			path = Manage;
+			sourceTree = "<group>";
+		};
+		D093B8081FBBC15C008DAC53 /* Calendar Details */ = {
+			isa = PBXGroup;
+			children = (
+				D093B8091FBBC181008DAC53 /* CalendarDetailsViewController.swift */,
+			);
+			path = "Calendar Details";
 			sourceTree = "<group>";
 		};
 		D0A136821F94F5F200AE9A51 /* AppUI */ = {
@@ -905,6 +916,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A1367B1F94F43700AE9A51 /* LandingTabController.swift in Sources */,
+				D093B80A1FBBC181008DAC53 /* CalendarDetailsViewController.swift in Sources */,
 				D0550A7D1FA4C76900B59626 /* ChecklistItemCell.swift in Sources */,
 				D0A136941F94FEC500AE9A51 /* EventsViewController.swift in Sources */,
 				D003406F1F9A6A2C00DF11FC /* EventLocationViewController.swift in Sources */,

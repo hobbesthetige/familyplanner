@@ -13,6 +13,7 @@ public class EventTabViewController : NXTabbedPageViewController
 {
     var event : Event?
     
+    private(set) var calendarController : EventCalendarDetailsViewController!
     private(set) var locationController : EventLocationViewController!
     private(set) var attendeesController : EventinvitationsViewController!
     private(set) var checklistsController : EventChecklistItemsViewController!
@@ -30,15 +31,30 @@ public class EventTabViewController : NXTabbedPageViewController
         
         instantiateAllControllers()
         
-        configure(using: [locationController,attendeesController,checklistsController,commentsController])
+        configure(using: allControllers)
     }
     
+    var allControllers : [UIViewController] {
+        
+        return [calendarController,locationController,attendeesController,checklistsController,commentsController]
+    }
     private func instantiateAllControllers() {
         
+        instantiateCalendarDetailsController()
         instantiateLocationController()
         instantiateAttendeesController()
         instantiateChecklistsController()
         instantiateCommentsController()
+    }
+    
+    private func instantiateCalendarDetailsController() {
+        
+        calendarController = storyboard!.instantiateViewController(withIdentifier: "calendar") as! EventCalendarDetailsViewController
+        
+        if let event = event {
+            
+            calendarController.event = event
+        }
     }
     
     private func instantiateLocationController() {

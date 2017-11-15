@@ -72,7 +72,7 @@ public struct EventCellViewModel : EventViewModel
         
         title = event.title
         color = event.color
-        isSingleDate = dateRange.isSingleDate
+        isSingleDate = dateRange.isSameDay
         isComplete = event.isComplete
         isInPast = event.isInPast
         isOccurringNow = event.isOccurringNow

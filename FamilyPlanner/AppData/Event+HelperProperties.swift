@@ -24,7 +24,7 @@ extension Event {
         
         if let dateRange = dateRange {
             
-            if dateRange.isSingleDate {
+            if dateRange.isSameDay {
                 
                 return dateRange.startDate.isToday
             }
@@ -37,7 +37,7 @@ extension Event {
     
     public var isSingleDate : Bool {
         
-        return dateRange?.isSingleDate ?? false
+        return dateRange?.isSameDay ?? false
     }
     
     public var startMonthFormattedString : String? {

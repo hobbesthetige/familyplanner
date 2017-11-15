@@ -27,14 +27,14 @@ class FamilyPlannerTests: XCTestCase {
         
         let dateRange = DateRange(singleDate: Date())
         
-        XCTAssertTrue(dateRange.isSingleDate, "Date range created from single date should calculate as single date")
+        XCTAssertTrue(dateRange.isSameDay, "Date range created from single date should calculate as single date")
     }
     
     func testNotSingleDateRange() {
         
         let dateRange = DateRange(startDate: Date(), endDate: Date().addingTimeInterval(1))
         
-        XCTAssert(dateRange.isSingleDate == false, "Date range with unique dates should not return as single date range")
+        XCTAssert(dateRange.isSameDay == false, "Date range with unique dates should not return as single date range")
     }
     
     func testEventIsInPast() {

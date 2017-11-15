@@ -12,22 +12,25 @@ public struct DateRange
 {
     public let startDate : Date
     public let endDate : Date
+    public let isAllDay : Bool
     
-    public var isSingleDate : Bool {
+    public var isSameDay : Bool {
         
-        return Calendar.current.compare(startDate, to: endDate, toGranularity: .second) == .orderedSame
+        return Calendar.current.compare(startDate, to: endDate, toGranularity: .day) == .orderedSame
     }
     
-    public init(startDate : Date, endDate : Date) {
+    public init(startDate : Date, endDate : Date, isAllDay : Bool) {
         
         self.startDate = startDate
         self.endDate = endDate
+        self.isAllDay = isAllDay
     }
     
     public init(singleDate date : Date) {
         
         self.startDate = date
         self.endDate = date
+        self.isAllDay = true
     }
 }
 
@@ -47,6 +50,8 @@ public class Event : EventCloudKitModel
 {
     public var title : String
     
+    public var subtitle : String?
+    
     public var description : String?
     
     public var color : UIColor
@@ -63,6 +68,10 @@ public class Event : EventCloudKitModel
     
     public var isComplete = false
     
+    public var author : FamilyMember
+    
+    public var createdDate : Date
+    
     
     
     public init(title : String) {
@@ -70,6 +79,10 @@ public class Event : EventCloudKitModel
         self.title = title
         
         self.color = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
+        
+        self.author = FamilyMember.userFamilyMember!
+        
+        self.createdDate = Date()
     }
     
     public func inviteAllFamily() {

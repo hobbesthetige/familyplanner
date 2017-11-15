@@ -15,7 +15,7 @@ public class EventViewController : UIViewController
     @IBOutlet weak var dateLabel : UILabel!
     @IBOutlet weak var thruLabel : UILabel!
     @IBOutlet weak var titleLabel : UILabel!
-    @IBOutlet weak var descriptionTextView : UITextView!
+    
     @IBOutlet weak var subtitleLabel : UILabel!
     
     @IBOutlet weak var dateStackView: UIStackView!

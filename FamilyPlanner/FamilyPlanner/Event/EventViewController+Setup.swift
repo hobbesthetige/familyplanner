@@ -26,11 +26,19 @@ extension EventViewController
         
         guard let event = event else { return }
         
+        subtitleLabel.text = event.relativeTime
+        titleLabel.text = event.title
+        
+        if let dateRange = event.dateRange {
+            
+            dateLabel.text = Calendar.current.component(.day, from: dateRange.startDate).description
+        }
+        
         if event.isSingleDate {
             
             hideThruLabelForSingleDate()
         }
-        else if let startMonth = event.startMonthFormattedString {
+        if let startMonth = event.startMonthFormattedString {
             
             monthLabel.text = startMonth
         }
@@ -50,29 +58,9 @@ extension EventViewController
         
         subtitleLabel.text = event.relativeTime
         
-        
-        setupDescriptionTextView()
     }
     
-    private func setupDescriptionTextView() {
-        
-        descriptionTextView.layer.cornerRadius = 3
-        descriptionTextView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.35).cgColor
-        descriptionTextView.layer.borderWidth = 0.5
-        
-        if let description = event?.description {
-            
-            descriptionTextView.text = description
-            
-            descriptionTextView.font = UIFont.preferredFont(forTextStyle: .body)
-        }
-        else {
-            
-            descriptionTextView.text = "No details provided."
-            
-            descriptionTextView.font = UIFont.italicSystemFont(ofSize: 13.0)
-        }
-    }
+    
     
     private func hideThruLabelForSingleDate() {
         

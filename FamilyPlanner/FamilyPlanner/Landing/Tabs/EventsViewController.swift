@@ -39,11 +39,17 @@ public class EventsViewController : UITableViewController
         sComponents.year = 2017
         sComponents.day = 17
         sComponents.month = 10
-        sComponents.hour = 0
+        sComponents.hour = 9
         sComponents.minute = 0
         sComponents.second = 0
         
-        event.dateRange = DateRange(singleDate: sComponents.date!)
+        var eComponents = sComponents
+        
+        eComponents.hour = 13
+        sComponents.minute = 0
+        sComponents.second = 0
+        
+        event.dateRange = DateRange(startDate: sComponents.date!, endDate: eComponents.date!, isAllDay: false)
         
         let locationBuilder = LocationBuilder(title: "The Blue House", coordinate: (34.988189,-80.266907))
         locationBuilder.street = "103 Upper White Store Road"

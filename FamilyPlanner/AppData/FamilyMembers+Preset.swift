@@ -10,6 +10,8 @@ import SwiftDate
 
 extension FamilyMember
 {
+    public static var userFamilyMember : FamilyMember? = .mom
+    
     public static var dad : FamilyMember {
         
         let birthday = Date.birthdate(day: 30, month: 9, year: 1957)
